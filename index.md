@@ -1,37 +1,22 @@
-## Welcome to GitHub Pages
+# frozen_string_literal: true
 
-You can use the [editor on GitHub](https://github.com/Ryheembon/Basic-Website/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+Gem::Specification.new do |s|
+  s.name          = "jekyll-theme-time-machine"
+  s.version       = "0.2.0"
+  s.license       = "CC0-1.0"
+  s.authors       = ["Jon Rohan", "GitHub, Inc."]
+  s.email         = ["opensource+jekyll-theme-time-machine@github.com"]
+  s.homepage      = "https://github.com/pages-themes/time-machine"
+  s.summary       = "Time Machine is a Jekyll theme for GitHub Pages"
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+  s.files         = `git ls-files -z`.split("\x0").select do |f|
+    f.match(%r{^((_includes|_layouts|_sass|assets)/|(LICENSE|README)((\.(txt|md|markdown)|$)))}i)
+  end
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Ryheembon/Basic-Website/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+  s.platform = Gem::Platform::RUBY
+  s.add_runtime_dependency "jekyll", "> 3.5", "< 5.0"
+  s.add_runtime_dependency "jekyll-seo-tag", "~> 2.0"
+  s.add_development_dependency "html-proofer", "~> 3.0"
+  s.add_development_dependency "rubocop-github", "~> 0.16"
+  s.add_development_dependency "w3c_validators", "~> 1.3"
+end
